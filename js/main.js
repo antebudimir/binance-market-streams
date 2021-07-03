@@ -31,61 +31,45 @@ binanceSocket.addEventListener('message', (event) => {
 		sandPrice = document.querySelector('#sandPrice'),
 		vetPrice = document.querySelector('#vetPrice');
 
-	// Check which crypto is which in the received data
-	let parsedETHUSDT = '',
-		parsedBTCUSDT = '',
-		parsedADAUSDT = '',
-		parsedMATICUSDT = '',
-		parsedMANAUSDT = '',
-		parsedSANDUSDT = '',
-		parsedVETUSDT = '';
-
 	// ETH
 	if (data[2] === 'ETHUSDT') {
 		const ETHUSDT = `ETH/USDT ${parseFloat(data[4]).toFixed(2)}`;
-		parsedETHUSDT = ETHUSDT;
-		ethPrice.textContent = parsedETHUSDT;
+		ethPrice.textContent = ETHUSDT;
 	}
 
 	// BTC
 	if (data[2] === 'BTCUSDT') {
 		const BTCUSDT = `BTC/USDT ${parseFloat(data[4]).toFixed(2)}`;
-		parsedBTCUSDT = BTCUSDT;
-		btcPrice.textContent = parsedBTCUSDT;
+		btcPrice.textContent = BTCUSDT;
 	}
 
 	// ADA
 	if (data[2] === 'ADAUSDT') {
 		const ADAUSDT = `ADA/USDT ${parseFloat(data[4]).toFixed(4)}`;
-		parsedADAUSDT = ADAUSDT;
-		adaPrice.textContent = parsedADAUSDT;
+		adaPrice.textContent = ADAUSDT;
 	}
 
 	// MATIC
 	if (data[2] === 'MATICUSDT') {
 		const MATICUSDT = `MATIC/USDT ${parseFloat(data[4]).toFixed(4)}`;
-		parsedMATICUSDT = MATICUSDT;
-		maticPrice.textContent = parsedMATICUSDT;
+		maticPrice.textContent = MATICUSDT;
 	}
 
 	// MANA
 	if (data[2] === 'MANAUSDT') {
 		const MANAUSDT = `MANA/USDT ${parseFloat(data[4]).toFixed(4)}`;
-		parsedMANAUSDT = MANAUSDT;
-		manaPrice.textContent = parsedMANAUSDT;
+		manaPrice.textContent = MANAUSDT;
 	}
 
 	// SAND
 	if (data[2] === 'SANDUSDT') {
 		const SANDUSDT = `SAND/USDT ${parseFloat(data[4]).toFixed(4)}`;
-		parsedSANDUSDT = SANDUSDT;
-		sandPrice.textContent = parsedSANDUSDT;
+		sandPrice.textContent = SANDUSDT;
 	}
 
 	// VET
 	if (data[2] === 'VETUSDT') {
 		const VETUSDT = `VET/USDT ${parseFloat(data[4]).toFixed(4)}`;
-		parsedVETUSDT = VETUSDT;
-		vetPrice.textContent = parsedVETUSDT;
+		vetPrice.textContent = VETUSDT;
 	}
 });

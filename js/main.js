@@ -1,3 +1,4 @@
+// Crypto streams, add others that you want
 const binanceStreams = [
 	'ethusdt@trade',
 	'btcusdt@trade',
@@ -7,12 +8,14 @@ const binanceStreams = [
 	'sandusdt@trade',
 	'vetusdt@trade',
 ];
+
 const binanceSocket = new WebSocket(
 	// Format for only one stream:
 	// 'wss://stream.binance.com:9443/ws/ethbusd@trade',
 	`wss://stream.binance.com:9443/stream?streams=${binanceStreams.join('/')}`,
 );
 
+// Listen for messages
 binanceSocket.addEventListener('message', (event) => {
 	// convert to JS object
 	const responseValues = JSON.parse(event.data);
@@ -23,7 +26,7 @@ binanceSocket.addEventListener('message', (event) => {
 	// console.log(data);
 	// price values are located at data[4]
 
-	//
+	// Crypto currencies, add others that you want
 	const currencies = [
 		'ETHUSDT',
 		'BTCUSDT',
@@ -54,6 +57,7 @@ binanceSocket.addEventListener('message', (event) => {
 	];
 
 	// Process all currencies
+	// -1 'cause array starts at position 0
 	let index = -1;
 
 	currencies.forEach((currency) => {
